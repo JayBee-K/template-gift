@@ -28,41 +28,1274 @@
 	
 	<title>Template Gift</title>
 	
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	
 	<link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/plugins/swiper/swiper.css">
 	<link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="./assets/plugins/waves/waves.min.css">
 	<link rel="stylesheet" href="./assets/css/helper.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
 	
 	<script type="text/javascript" src="./assets/plugins/jquery.min.js"></script>
 	<script type="text/javascript" src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="./assets/plugins/swiper/swiper.js"></script>
+	<script type="text/javascript" src="./assets/plugins/waves/waves.min.js"></script>
 	<script type="text/javascript" src="./assets/js/theme-script.js"></script>
 	
 	<style>
 		:root {
-			--primary-color: #f8165c;
-			--primary-hover: #c31349;
-			--primary-color-rgb: 248, 22, 92;
-			--secondary-color: #199100;
-			--secondary-hover: #136901;
-			--secondary-color-rgb: 25, 145, 0;
+			--primary-color: #085870;
+			--primary-hover: #117898;
+			--primary-color-rgb: 12, 111, 141;
 		}
 	</style>
 </head>
 <body>
+
+<div class="modal fade popup-order" id="popup-order">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="popup-body">
+				<div class="popup-left">
+					<img src="./assets/images/popup/bg-popup.png" alt="">
+					<div class="popup-left_content">
+						<div class="product-title" id="product-title">
+							Lorem ipsum dolor sit amet
+						</div>
+						<div class="product-desc">
+							<div class="product-price">
+								<div class="current-price">
+									Giá tiền: <span id="current-price">0222</span>&nbsp;<b><sup>đ</sup></b>
+								</div>
+							</div>
+							<div class="product-sku">
+								Mã SKU: <span id="sku">1ba</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="popup-right">
+					<button class="popup-close" data-dismiss="modal" type="button">
+						<i class="fal fa-times"></i>
+					</button>
+					<div class="popup-heading">
+						<div class="popup-heading_title">
+							Thông tin đặt hàng
+						</div>
+						<div class="popup-heading_description">
+							Lorem ipsum dolor sit amet
+						</div>
+						<div class="popup-heading_image">
+							<img src="./assets/images/popup/heading.png" alt="">
+						</div>
+					</div>
+					<div class="popup-form">
+						<form action="">
+							<div class="row row-10">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="">Full name <span class="text-danger">*</span></label>
+										<input type="text" required placeholder="Full name...">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="">Phone <span class="text-danger">*</span></label>
+										<input type="tel" required placeholder="Phone...">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="">Adress <span class="text-danger">*</span></label>
+										<input type="text" required placeholder="Address...">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="">Time <span class="text-danger">*</span></label>
+										<input type="date" required>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="">Notes</label>
+										<textarea name="" id="" rows="4" placeholder="Notes"></textarea>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="text-center mt-4">
+										<button class="btn btn-primary_theme btn-sm waves-light waves-effect">Order
+											now
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <header class="header" id="header">
 	<div class="header-top">
 		<div class="container">
-			<div class="header-left">
-				<a href="" class="d-inline-block">
-					<img src="./assets/images/logo.png" alt="">
-				</a>
+			<div class="row">
+				<div class="col-12">
+					<div class="header-top_wrapper">
+						<div class="header-logo">
+							<a href="" class="d-inline-block">
+								<img class="img-fluid" src="./assets/images/logo.png" alt="">
+							</a>
+						</div>
+						<div class="header-search">
+							<form action="">
+								<div class="form-group">
+									<input type="text" class="form-control" id="frmSearch"
+									       placeholder="Tìm kiếm quà tặng, thương hiệu...">
+									<button type="submit"><i class="fal fa-search"></i></button>
+								</div>
+							</form>
+						</div>
+						<div class="header-account">
+							<div class="header-account_item d-none">
+								<a href="" class="cart">
+									<i class="fal fa-shopping-basket"></i>
+									<div id="cartCount">0</div>
+									<span>Giỏ hàng</span>
+								</a>
+							</div>
+							<div class="header-account_item">
+								<a href="" class="login">
+									<i class="fal fa-user-alt"></i>
+									<span>Tài khoản</span>
+								</a>
+							</div>
+							<div class="header-account_item">
+								<div class="language">
+									<i class="fal fa-language"></i>
+									<span>Ngôn ngữ <i class="fas fa-caret-down"></i></span>
+									<ul class="list-unstyled mb-0">
+										<li>
+											<a href="">
+												VI - VIETNAM
+											</a>
+										</li>
+										<li>
+											<a href="">
+												EN - ENGLISH
+											</a>
+										</li>
+										<li>
+											<a href="">
+												KO - KOREA
+											</a>
+										</li>
+										<li>
+											<a href="">
+												JP - JAPAN
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="header-right"></div>
 		</div>
 	</div>
-	<div class="header-nav"></div>
+	<div class="header-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="header-nav_main">
+						<ul class="list-unstyled mb-0">
+							<li>
+								<a href="index.html">
+									Trang chủ
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Giới thiệu
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Dịch vụ
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Sản phẩm
+									<i class="fas fa-caret-down"></i>
+								</a>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="javascript:;">
+											Danh mục sản phẩm
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Danh mục sản phẩm
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Danh mục sản phẩm
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Danh mục sản phẩm
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Danh mục sản phẩm
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Tin tức
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Hướng dẫn
+									<i class="fas fa-caret-down"></i>
+								</a>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="javascript:;">
+											Hướng dẫn đặt hàng
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Hướng dẫn thanh toán
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											Hướng dẫn nhận hàng
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="javascript:;">
+									Liên hệ
+								</a>
+							</li>
+						</ul>
+						<div class="header-contact">
+							<div class="header-contact_icon">
+								<i class="fas fa-headset"></i>
+							</div>
+							<div class="header-contact_content">
+								<p><b>Hotline: </b><a href="tel:0909.090.909">0909.090.909</a></p>
+								<p><b>Email: </b><a href="mailto:example@gmail.com">example@gmail.com</a>
+								</p>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
+<div class="main">
+	<div class="sec-banner">
+		<div class="swiper-container" id="slide-banner">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="" class="banner-item">
+						<img src="./assets/images/banner/1.jpeg" class="img-fluid" alt="">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="" class="banner-item">
+						<img src="./assets/images/banner/2.jpeg" class="img-fluid" alt="">
+					</a>
+				</div>
+				<div class="swiper-slide">
+					<a href="" class="banner-item">
+						<img src="./assets/images/banner/3.jpeg" class="img-fluid" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="swiper-button-prev">
+				<i class="fal fa-angle-left"></i>
+			</div>
+			<div class="swiper-button-next">
+				<i class="fal fa-angle-right"></i>
+			</div>
+		</div>
+	</div>
+	<div class="sec-transfer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="transfer-inner">
+						<div class="transfer-inner_heading">
+							Easy And Fast Way To Send Money
+						</div>
+						<div class="transfer-inner_desc">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+						</div>
+						<div class="transfer-inner_steps">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<span>1</span>
+									Select Currency
+								</li>
+								<li>
+									<span>2</span>
+									Input Information
+								</li>
+								<li>
+									<span>3</span>
+									Confirm And Send
+								</li>
+							</ul>
+						</div>
+						<div class="transfer-inner_form">
+							<form action="">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="">
+												Send Amount
+											</label>
+											<div class="form-group_field">
+												<input type="text" placeholder="$1,000.00">
+												<div class="current-select">
+													<span class="selected openCur_selected">
+														<img src="./assets/images/current/usa.png" alt="">
+														USD
+													</span>
+													<ul class="list-unstyled mb-0">
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/usa.png" alt="">
+																USD
+															</a>
+														</li>
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/korea.png" alt="">
+																KRW
+															</a>
+														</li>
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/japan.png" alt="">
+																JPY
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="form-desc">
+											<span><strong>75.5</strong> Exchange Rate</span>
+											<span><strong>$4.50</strong> Transition Fees</span>
+										</div>
+										<div class="form-group">
+											<label for="">
+												Receive Amount
+											</label>
+											<div class="form-group_field">
+												<input type="text" placeholder="$1,000.00">
+												<div class="current-select">
+													<span class="selected openCur_selected">
+														<img src="./assets/images/current/korea.png" alt="">
+														KRW
+													</span>
+													<ul class="list-unstyled mb-0">
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/usa.png" alt="">
+																USD
+															</a>
+														</li>
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/korea.png" alt="">
+																KRW
+															</a>
+														</li>
+														<li>
+															<a href="javascript:void(0)" class="choose-cur">
+																<img src="./assets/images/current/japan.png" alt="">
+																JPY
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="">Full name</label>
+											<input type="text" placeholder="Recipient's name...">
+										</div>
+										<div class="form-group">
+											<label for="">Email</label>
+											<input type="email" placeholder="Recipient's email...">
+										</div>
+										<div class="form-group">
+											<label for="">Phone</label>
+											<input type="tel" placeholder="Recipient's phone...">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="text-center mt-5">
+											<button type="button"
+											        class="btn btn-primary_theme waves-light waves-effect">
+												Continue <i class="fas fa-long-arrow-alt-right ml-1"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sec-category">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="category-heading">
+						Danh Mục Quà Tặng
+					</div>
+				</div>
+				<div class="col-md-12">
+					<ul class="list-unstyled mb-0 category-list">
+						<li>
+							<a href="">
+								<img src="./assets/images/category/flower.png" alt="">
+								Flowers
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/cakes.png" alt="">
+								Cakes
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/combo.png" alt="">
+								Combos
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/plants.png" alt="">
+								Plants
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/gifts.png" alt="">
+								Gifts
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/personalised.png" alt="">
+								Personalised
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="./assets/images/category/chocolates.png" alt="">
+								Chocolates
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sec-product">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="product-heading">
+						Flowers 1
+					</div>
+					<div class="product-list">
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/3.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/4.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/3.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/4.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sec-product">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="product-heading">
+						Flowers 2
+					</div>
+					<div class="product-list">
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/3.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/4.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/3.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/4.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/1.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="product-list_item">
+							<a href="">
+								<img src="./assets/images/product/flower/2.jpg" alt="" class="img-fluid">
+							</a>
+							<div class="product-item_content">
+								<div class="product-item_title">
+									<a href="">
+										HOA LAN HỒ ĐIỆP 16609 (2 CÀNH)
+									</a>
+								</div>
+								<div class="product-item_price">
+									<div class="current-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+									<div class="old-price">
+										190.999 <b><sup>đ</sup></b>
+									</div>
+								</div>
+								<div class="product-item_sku">
+									SKU: <span>HLHD</span>
+								</div>
+								<div class="product-item_cart">
+									<button data-target="#popup-order" data-toggle="modal"
+									        class="btn btn-primary_theme waves-light waves-effect">Buy now
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer id="footer" class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="footer-top w-100">
+					<div class="row row-cols-lg-5">
+						<div class="col">
+							<div class="footer-list_inner">
+								<div class="footer-list_title">
+									Flowers 01
+								</div>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor sit.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="footer-list_inner">
+								<div class="footer-list_title">
+									Flowers 02
+								</div>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor sit.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="footer-list_inner">
+								<div class="footer-list_title">
+									Flowers 03
+								</div>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor sit.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="footer-list_inner">
+								<div class="footer-list_title">
+									Flowers 04
+								</div>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor sit.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col">
+							<div class="footer-list_inner">
+								<div class="footer-list_title">
+									Flowers 05
+								</div>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor sit.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum dolor.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+									<li>
+										<a href="">
+											Lorem ipsum.
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="footer-middle">
+					<div class="footer-middle_title">
+						CÔNG TY CP THƯƠNG MẠI VÀ DV TRỰC TUYẾN NENCER
+					</div>
+					<div class="footer-middle_list">
+						<p>Số 152 Trần Vỹ, Mai Dịch, Cầu Giấy, Hà Nội</p>
+						<p>Email: <b>support@nencer.com</b></p>
+						<p>Hỗ trợ: <b>(+84) 024 62 757 222</b>(Thứ 2 đến Chủ Nhật). Hotline: <b>0943793984 (Zalo)</b>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 </body>
 </html>
