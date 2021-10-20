@@ -8,10 +8,27 @@ const keyUpFrm = function (elm) {
 	});
 }
 
+const paramPopupOrder = function (target, name, cPrice, sku = '') {
+	$('#product-title').html(name);
+	$('#current-price').html(cPrice);
+	$('#sku').html(sku);
+	$(target).modal('show');
+}
+
 $(document).ready(function () {
 	Waves.init();
 	
 	keyUpFrm($('#frmSearch'));
+	
+	$('.call-popupOrder').click(function (e) {
+		e.stopPropagation();
+		let target = $(this).attr('data-target'),
+			name = $(this).attr('data-name'),
+			cPrice = $(this).attr('data-cPrice'),
+			sku = $(this).attr('data-sku');
+		
+		paramPopupOrder(target, name, cPrice, sku)
+	});
 	
 	const _slideBanner = new Swiper('#slide-banner', {
 		loop: true,
@@ -28,11 +45,11 @@ $(document).ready(function () {
 		},
 	});
 	
-	$('.openCur_selected').click(function (e) {
+	$('.openCur_selected').click(function () {
 		$(this).parent().toggleClass('active');
 	});
 	
-	$('.choose-cur').click(function (e) {
+	$('.choose-cur').click(function () {
 		$(this).closest('.current-select').removeClass('active');
 	});
 });
