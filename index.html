@@ -308,16 +308,6 @@
 								</a>
 							</li>
 						</ul>
-						<div class="header-contact">
-							<div class="header-contact_icon">
-								<i class="fas fa-headset"></i>
-							</div>
-							<div class="header-contact_content">
-								<p><b>Hotline: </b><a href="tel:0909.090.909">0909.090.909</a></p>
-								<p><b>Email: </b><a href="mailto:example@gmail.com">example@gmail.com</a>
-								</p>
-							</div>
-						</div>
 					</nav>
 				</div>
 			</div>
@@ -330,17 +320,12 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
 					<a href="" class="banner-item">
-						<img src="./assets/images/banner/1.jpeg" class="img-fluid" alt="">
+						<img src="./assets/images/banner/1.jpg" class="img-fluid" alt="">
 					</a>
 				</div>
 				<div class="swiper-slide">
 					<a href="" class="banner-item">
-						<img src="./assets/images/banner/2.jpeg" class="img-fluid" alt="">
-					</a>
-				</div>
-				<div class="swiper-slide">
-					<a href="" class="banner-item">
-						<img src="./assets/images/banner/3.jpeg" class="img-fluid" alt="">
+						<img src="./assets/images/banner/2.jpg" class="img-fluid" alt="">
 					</a>
 				</div>
 			</div>
@@ -351,82 +336,57 @@
 				<i class="fal fa-angle-right"></i>
 			</div>
 		</div>
-	</div>
-	<div class="sec-transfer" style="background-image: url(./assets/images/bubble.png)">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="transfer-inner">
-						<div class="transfer-inner_heading">
-							Easy And Fast Way To Send Money
-						</div>
-						<div class="transfer-inner_desc">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-						</div>
-						<div class="transfer-inner_steps">
-							<ul class="list-unstyled mb-0">
-								<li>
-									<span>1</span>
-									Select Currency
-								</li>
-								<li>
-									<span>2</span>
-									Input Information
-								</li>
-								<li>
-									<span>3</span>
-									Confirm And Send
-								</li>
-							</ul>
-						</div>
-						<div class="transfer-inner_form">
-							<form action="">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="">
-												Tiền nhận (VNĐ)
-											</label>
-											<input type="text" placeholder="0">
+		<div class="form-transfer">
+			<div class="form-inner">
+				<form action="">
+					<div class="money-send">
+						<div class="money-send_inner">
+							<div class="inner-form">
+								<label for="">
+									Bạn chuyển
+								</label>
+								<div class="inner-form_group">
+									<input type="number" placeholder="$ 0,00" class="group-input">
+									<div class="group-select">
+										<div class="call-selectCurrent selected">
+											<img src="./assets/images/current/usa.png" alt="">
+											USD
 										</div>
-										<div class="form-desc">
-											<span><strong>¥75.5</strong> Tổng tiền thanh toán</span>
-										</div>
-										<div class="form-group">
-											<label for="">
-												Tài khoản người nhận
-											</label>
-											<input type="text" placeholder="Số tài khoản...">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="">Ngân hàng muốn gửi</label>
-											<input type="text" placeholder="Ngân hàng muốn gửi...">
-										</div>
-										<div class="form-group">
-											<label for="">Tên gửi người</label>
-											<input type="text" placeholder="Họ tên người gửi...">
-										</div>
-										<div class="form-group">
-											<label for="">Điện thoại</label>
-											<input type="tel" placeholder="Điện thoại người gửi...">
-										</div>
-									</div>
-									<div class="col-12">
-										<div class="text-center mt-5">
-											<button type="button"
-											        class="btn btn-primary_theme waves-light waves-effect">
-												Continue <i class="fas fa-long-arrow-alt-right ml-1"></i>
-											</button>
+										<div class="group-dropdown">
+											<div data-image="./assets/images/current/usa.png" data-title="USD"
+											     class="group-dropdown_item selectCurrent active">
+												<img src="./assets/images/current/usa.png" alt="">
+												USD
+											</div>
+											<div data-image="./assets/images/current/japan.png" data-title="Yên"
+											     class="group-dropdown_item selectCurrent">
+												<img src="./assets/images/current/japan.png" alt="">
+												Yên
+											</div>
+											<div data-image="./assets/images/current/korea.png" data-title="Won"
+											     class="group-dropdown_item selectCurrent">
+												<img src="./assets/images/current/korea.png" alt="">
+												Won
+											</div>
 										</div>
 									</div>
 								</div>
-							</form>
+							</div>
+							<div class="inner-form">
+								<label for="">
+									Tên tài khoản
+								</label>
+								<input type="text" placeholder="" class="inner-form_input">
+							</div>
+							<div class="text-center">
+								<button class="btn btn-primary_theme waves-effect waves-light w-100">Confrim</button>
+							</div>
+							<div class="text-center inner-form_desc">
+								By clicking confirm, I am agree with <b>Terms & Policy</b>
+							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -15,10 +15,35 @@ const paramPopupOrder = function (target, name, cPrice, sku = '') {
 	$(target).modal('show');
 }
 
+const callSelectCurrent = function (e) {
+	$('.call-selectCurrent').click(function () {
+		$(this).parent().toggleClass('open');
+	});
+}
+
+const selectCurrent = function (e) {
+	$('.selectCurrent').click(function (e) {
+		if ($(this).hasClass('active')) {
+			$('.call-selectCurrent').trigger('click');
+		} else {
+			let _image = $(this).attr('data-image'),
+				_title = $(this).attr('data-title'),
+				_htmlRender = `<img src="${_image}"> ${_title}`;
+			
+			$('.selectCurrent').removeClass('active');
+			$(this).addClass('active');
+			$(this).parent().prev('.call-selectCurrent').html(_htmlRender);
+			$('.call-selectCurrent').trigger('click');
+		}
+	});
+}
+
 $(document).ready(function () {
 	Waves.init();
 	
 	keyUpFrm($('#frmSearch'));
+	callSelectCurrent();
+	selectCurrent();
 	
 	$('.call-popupOrder').click(function (e) {
 		e.stopPropagation();
