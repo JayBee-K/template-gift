@@ -19,12 +19,18 @@ const callSelectCurrent = function (e) {
 	$('.call-selectCurrent').click(function () {
 		$(this).parent().toggleClass('open');
 	});
+	
+	$('body').mouseup(function (e) {
+		if (!$('.call-selectCurrent').is(e.target)) {
+			$('.group-select').removeClass('open');
+		}
+	});
 }
 
 const selectCurrent = function (e) {
 	$('.selectCurrent').click(function (e) {
 		if ($(this).hasClass('active')) {
-			$('.call-selectCurrent').trigger('click');
+			$('.call-selectCurrent').removeClass('open');
 		} else {
 			let _image = $(this).attr('data-image'),
 				_title = $(this).attr('data-title'),
@@ -33,10 +39,37 @@ const selectCurrent = function (e) {
 			$('.selectCurrent').removeClass('active');
 			$(this).addClass('active');
 			$(this).parent().prev('.call-selectCurrent').html(_htmlRender);
-			$('.call-selectCurrent').trigger('click');
+			$('.call-selectCurrent').removeClass('open');
 		}
 	});
 }
+
+const callSelectBank = function (e) {
+	$('#clickedBank').click(function () {
+		$(this).parent().toggleClass('open');
+	});
+	
+	$('body').mouseup(function (e) {
+		if (!$('#clickedBank').is(e.target)) {
+			$('.call-selectBank').removeClass('open');
+		}
+	});
+}
+const selectBanker = function (e) {
+	$('.selectBank').click(function (e) {
+		if ($(this).hasClass('active')) {
+			$('#clickedBank').removeClass('open');
+		} else {
+			let _title = $(this).attr('data-title');
+			
+			$('.selectBank').removeClass('active');
+			$(this).addClass('active');
+			$('#valueBank').val(_title);
+			$('#clickedBank').html(_title).removeClass('open');
+		}
+	});
+}
+
 
 $(document).ready(function () {
 	Waves.init();
@@ -44,6 +77,9 @@ $(document).ready(function () {
 	keyUpFrm($('#frmSearch'));
 	callSelectCurrent();
 	selectCurrent();
+	callSelectBank();
+	selectBanker();
+	
 	
 	$('.call-popupOrder').click(function (e) {
 		e.stopPropagation();

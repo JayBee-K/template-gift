@@ -341,12 +341,16 @@
 				<form action="">
 					<div class="money-send">
 						<div class="money-send_inner">
+							<div class="inner-form_title">
+								<span>Gửi tiền Việt Nam</span>
+							</div>
 							<div class="inner-form">
 								<label for="">
-									Bạn chuyển
+									Số tiền muốn gửi
 								</label>
 								<div class="inner-form_group">
-									<input type="number" placeholder="$ 0,00" class="group-input">
+									<input type="number" value="5,000,000" min="5000000" max="100000000" step="100000"
+									       class="group-input">
 									<div class="group-select">
 										<div class="call-selectCurrent selected">
 											<img src="./assets/images/current/usa.png" alt="">
@@ -371,12 +375,62 @@
 										</div>
 									</div>
 								</div>
+								<div class="label-waring">
+									Tối đa 10.000.000 VNĐ
+								</div>
 							</div>
 							<div class="inner-form">
 								<label for="">
-									Tên tài khoản
+									Ngân hàng nhận
 								</label>
-								<input type="text" placeholder="" class="inner-form_input">
+								<div class="inner-form_group">
+									<input type="hidden" value="Techcombank" id="valueBank" class="group-input">
+									<div class="call-selectBank selected-bank">
+										<span id="clickedBank">Techcombank</span>
+										<div class="group-dropdown">
+											<div data-title="Techcombank"
+											     class="group-dropdown_item selectBank active">
+												Techcombank
+											</div>
+											<div data-title="BIDV"
+											     class="group-dropdown_item selectBank">
+												BIDV
+											</div>
+											<div data-title="Sacombank"
+											     class="group-dropdown_item selectBank">
+												Sacombank
+											</div>
+											<div data-title="ACB"
+											     class="group-dropdown_item selectBank">
+												ACB
+											</div>
+											<div data-title="Vietcombank"
+											     class="group-dropdown_item selectBank">
+												Vietcombank
+											</div>
+											<div data-title="TPBank"
+											     class="group-dropdown_item selectBank">
+												TPBank
+											</div>
+											<div data-title="MBBank"
+											     class="group-dropdown_item selectBank">
+												MBBank
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="inner-form">
+								<label for="">
+									Số tài khoản người nhận
+								</label>
+								<input type="text" placeholder="XXXX - XXXX - XXXX" class="inner-form_input">
+							</div>
+							<div class="inner-form">
+								<label for="">
+									Tên người nhận
+								</label>
+								<input type="text" placeholder="Nguyễn Văn A" class="inner-form_input">
 							</div>
 							<div class="text-center">
 								<button class="btn btn-primary_theme waves-effect waves-light w-100">Confrim</button>

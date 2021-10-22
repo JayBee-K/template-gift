@@ -296,7 +296,7 @@ body {
 .sec-banner .banner-item:before {
     display: block;
     content: "";
-    padding-top: 450px;
+    padding-top: 750px;
 }
 
 .sec-banner .banner-item > img {
@@ -919,10 +919,11 @@ body {
     background-color: #fff;
     padding: 30px;
     border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .44);
 }
 
 .form-transfer .form-inner .inner-form {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     position: relative;
 }
 
@@ -936,11 +937,11 @@ body {
 }
 
 .form-transfer .form-inner .inner-form .inner-form_input {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #e5e2e2;
     border-radius: 2px;
     background: #fff;
     height: 48px;
-    padding: 5px 15px;
+    padding: 5px 15px 8px;
     font-size: 16px;
     width: 100%;
 }
@@ -950,7 +951,7 @@ body {
 }
 
 .form-transfer .form-inner .inner-form .inner-form_group .group-input {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #e5e2e2;
     border-right: 0;
     border-radius: 2px 0 0 2px;
     background: #fff;
@@ -1003,6 +1004,39 @@ body {
     font-weight: 900;
 }
 
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank {
+    position: relative;
+    width: 100%;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank > span {
+    border: 1px solid #f1f1f1;
+    border-radius: 2px;
+    background: #fff;
+    height: 48px;
+    padding: 5px 30px 5px 15px;
+    width: 100%;
+    font-size: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank > span:after {
+    position: absolute;
+    display: block;
+    right: 12px;
+    font-size: .9em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8d8d8d;
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown,
 .form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown {
     box-shadow: 0px 15px 30px rgb(0 0 0 / 10%);
     background-color: #ffffff;
@@ -1027,6 +1061,35 @@ body {
     pointer-events: none;
 }
 
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown {
+    max-width: 60%;
+    max-height: 295px;
+    overflow-y: auto;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown::-webkit-scrollbar-track {
+    border-radius: 7px;
+    background: transparent;
+    border: 0;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #aaa;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank.open > .group-dropdown,
 .form-transfer .form-inner .inner-form .inner-form_group .group-select.open > .group-dropdown {
     opacity: 1;
     pointer-events: auto;
@@ -1035,7 +1098,7 @@ body {
     transform: scale(1) translateY(0);
 }
 
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item {
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1050,23 +1113,34 @@ body {
     border-radius: 4px;
 }
 
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item + .group-dropdown_item {
+.form-transfer .form-inner .inner-form .inner-form_group .selected-bank .group-dropdown > .group-dropdown_item {
+    justify-content: flex-start;
+}
+
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item + .group-dropdown_item {
     margin-top: 4px;
 }
 
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item > img {
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item > img {
     width: 18px;
     margin-right: 4px;
 }
 
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item.active {
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item.active {
     font-weight: 700;
 }
 
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item.active,
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item:hover,
-.form-transfer .form-inner .inner-form .inner-form_group .group-select > .group-dropdown > .group-dropdown_item:active {
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item.active,
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item:hover,
+.form-transfer .form-inner .inner-form .inner-form_group .group-dropdown > .group-dropdown_item:active {
     background-color: #f6f6f6;
+}
+
+.form-transfer .form-inner .inner-form .label-waring {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #de2929;
+    text-align: left;
 }
 
 .form-transfer .form-inner .inner-form_desc {
@@ -1080,4 +1154,30 @@ body {
     color: var(--primary-color);
     letter-spacing: 0.5px;
     font-weight: 700;
+}
+
+.form-transfer .form-inner .inner-form_title {
+
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.form-transfer .form-inner .inner-form_title span {
+    font-weight: 700;
+    color: #2f2f35;
+    background-color: #fff;
+    padding-right: 15px;
+    font-size: 1.7em;
+    position: relative;
+}
+
+.form-transfer .form-inner .inner-form_title:before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #e9e9e9;
+    bottom: 10px;
+    left: 0;
 }
